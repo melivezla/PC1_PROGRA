@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\PC1_TEO_PROGRA_CHAVEZMELI.props" />
+</Project>

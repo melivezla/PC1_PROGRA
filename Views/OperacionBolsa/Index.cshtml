@@ -1,0 +1,26 @@
+@model PC1_TEO_PROGRA_CHAVEZMELI.Models.OperacionBolsa
+
+<form asp-action="Index" method="post">
+    <label>Nombre y Apellido:</label>
+    <input asp-for="Nombre" />
+    <span asp-validation-for="Nombre"></span>
+
+    <label>Correo Electrónico:</label>
+    <input asp-for="CorreoElectronico" />
+    <span asp-validation-for="CorreoElectronico"></span>
+
+    <label>Fecha de Operación:</label>
+    <input asp-for="FechaOperacion" type="date" />
+    <span asp-validation-for="FechaOperacion"></span>
+
+    <label>Instrumentos:</label>
+    <input asp-for="SP500" /> S&P 500
+    <input asp-for="DowJones" /> Dow Jones
+    <input asp-for="BonosUS" /> Bonos US
+
+    <label>Monto a Abonar:</label>
+    <input asp-for="MontoAbonar" />
+    <span asp-validation-for="MontoAbonar"></span>
+
+    <button type="submit">Invertir</button>
+</form>

@@ -1,0 +1,46 @@
+@model PC1_TEO_PROGRA_CHAVEZMELI.Models.OperacionBolsa
+
+<h2>Resumen de la Operación</h2>
+
+<p>Nombre: @Model.Nombre</p>
+<p>Correo Electrónico: @Model.CorreoElectronico</p>
+<p>Fecha de Operación: @Model.FechaOperacion.ToShortDateString()</p>
+
+<table class="operacion-table">
+    <thead>
+        <tr>
+            <th>Instrumento</th>
+            <th>IGV</th>
+            <th>Monto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.SP500)
+        {
+            <tr>
+                <td>S&P 500</td>
+                <td>@(500 * Model.IGV)</td>
+                <td>500$</td>
+            </tr>
+        }
+        @if (Model.DowJones)
+        {
+            <tr>
+                <td>Dow Jones</td>
+                <td>@(300 * Model.IGV)</td>
+                <td>300$</td>
+            </tr>
+        }
+        @if (Model.BonosUS)
+        {
+            <tr>
+                <td>Bonos US</td>
+                <td>@(120 * Model.IGV)</td>
+                <td>120$</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>Comisión: @Model.Comision$</p>
+<p>Total a Pagar: @Model.TotalPagar$</p>
